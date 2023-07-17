@@ -129,11 +129,15 @@
   <ItemGroup>
     <ClCompile Include="CalculationHelper.cpp" />
     <ClCompile Include="HeatSensor.cpp" />
+    <ClCompile Include="SensorData.cpp" />
+    <ClCompile Include="SensorHandler.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CalculationHelper.h" />
     <ClInclude Include="HeatSensor.h" />
+    <ClInclude Include="SensorData.h" />
+    <ClInclude Include="SensorHandler.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

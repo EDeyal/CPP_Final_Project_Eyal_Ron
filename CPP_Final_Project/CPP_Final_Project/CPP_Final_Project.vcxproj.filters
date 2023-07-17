@@ -24,12 +24,24 @@
     <ClCompile Include="CalculationHelper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SensorHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SensorData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HeatSensor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CalculationHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SensorHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SensorData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
