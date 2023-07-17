@@ -1,9 +1,9 @@
 ﻿  HeatSensor.cpp
 E:\School\Year 3\CPP Advanced\Final Project\CPP_Final_Project_Eyal_Ron\CPP_Final_Project\CPP_Final_Project\HeatSensor.cpp(17,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-E:\School\Year 3\CPP Advanced\Final Project\CPP_Final_Project_Eyal_Ron\CPP_Final_Project\CPP_Final_Project\HeatSensor.cpp(19,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\School\Year 3\CPP Advanced\Final Project\CPP_Final_Project_Eyal_Ron\CPP_Final_Project\CPP_Final_Project\HeatSensor.cpp(38,24): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\School\Year 3\CPP Advanced\Final Project\CPP_Final_Project_Eyal_Ron\CPP_Final_Project\CPP_Final_Project\HeatSensor.cpp(42,24): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\School\Year 3\CPP Advanced\Final Project\CPP_Final_Project_Eyal_Ron\CPP_Final_Project\CPP_Final_Project\HeatSensor.cpp(47,9): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  SensorData.cpp
   SensorHandler.cpp
+E:\School\Year 3\CPP Advanced\Final Project\CPP_Final_Project_Eyal_Ron\CPP_Final_Project\CPP_Final_Project\SensorHandler.cpp(24,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   Source.cpp
   Generating Code...
   CPP_Final_Project.vcxproj -> E:\School\Year 3\CPP Advanced\Final Project\CPP_Final_Project_Eyal_Ron\CPP_Final_Project\x64\Debug\CPP_Final_Project.exe

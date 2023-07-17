@@ -7,10 +7,14 @@ SensorHandler::SensorHandler()
 	int minTemperature = -20;
 	int maxTemperature = 50;
 	int maxTemperatureSway = 10;	// the amount of degrees the temperature can change between tests
-	HeatSensor tempSensor(minTemperature, maxTemperature, maxTemperatureSway);
-	_heatSensor = &tempSensor;
+	_heatSensor = new HeatSensor(minTemperature, maxTemperature, maxTemperatureSway);
 
 	_testNumber = 0;
+}
+
+SensorHandler::~SensorHandler()
+{
+	delete _heatSensor;
 }
 
 SensorData SensorHandler::GenerateFakeSensorData()

@@ -3,8 +3,8 @@
 
 class HeatSensor : public Sensor
 {
-	float _lastTemprature;
-	float _currentTemprature;
+	int _lastTemprature;
+	int _currentTemprature;
 	int _minTemprature;
 	int _maxTemprature;
 	int _tempratureMaxDelta;

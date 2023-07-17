@@ -1,7 +1,7 @@
 #include "SensorData.h"
 
 
-SensorData::SensorData(string sensorName, int testNumber, float temperature)
+SensorData::SensorData(string sensorName, int testNumber, int temperature)
 {
 	_sensorName = sensorName;
 	_testNumber = testNumber;
@@ -11,6 +11,5 @@ SensorData::SensorData(string sensorName, int testNumber, float temperature)
 string SensorData::ToString() const
 {
 	//string bla = "Sensor Name: " + _sensorName + ", Test Number: " + to_string(_testNumber) + ", Temperature: " + to_string(_temperature);
-	//string bla1 = "Temperature: " /*+ std::to_string(_temperature)*/;
-	return "aaaa";
+	return "Sensor Name: " + _sensorName + ", Test Number: " + to_string(_testNumber) + ", Temperature: " + to_string(_temperature);
 }

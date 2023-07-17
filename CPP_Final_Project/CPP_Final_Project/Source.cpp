@@ -15,7 +15,5 @@ int main()
 		cout << hmm << endl;
 	}
 
-	delete sensorHandler._heatSensor;
-
 	return 0;
 }

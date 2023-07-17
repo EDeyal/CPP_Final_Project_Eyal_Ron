@@ -4,10 +4,11 @@
 class SensorHandler
 {
 	int _testNumber;
+	HeatSensor* _heatSensor;
 
 public:
-	HeatSensor* _heatSensor;
 	SensorHandler();
+	~SensorHandler();
 	SensorData GenerateFakeSensorData();
 };
 
