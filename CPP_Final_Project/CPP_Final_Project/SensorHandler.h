@@ -3,9 +3,11 @@
 #include "SensorData.h"
 class SensorHandler
 {
-	HeatSensor _heatSensor;
+	int _testNumber;
 
 public:
-	SensorData GetSensorData();
+	HeatSensor* _heatSensor;
+	SensorHandler();
+	SensorData GenerateFakeSensorData();
 };
 

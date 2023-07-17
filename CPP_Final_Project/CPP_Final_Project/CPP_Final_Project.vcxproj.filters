@@ -30,6 +30,9 @@
     <ClCompile Include="SensorData.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Sensor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HeatSensor.h">
@@ -42,6 +45,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SensorData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sensor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

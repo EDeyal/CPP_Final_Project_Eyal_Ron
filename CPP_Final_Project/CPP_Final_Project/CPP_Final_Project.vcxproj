@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="CalculationHelper.cpp" />
     <ClCompile Include="HeatSensor.cpp" />
+    <ClCompile Include="Sensor.cpp" />
     <ClCompile Include="SensorData.cpp" />
     <ClCompile Include="SensorHandler.cpp" />
     <ClCompile Include="Source.cpp" />
@@ -136,6 +137,7 @@
   <ItemGroup>
     <ClInclude Include="CalculationHelper.h" />
     <ClInclude Include="HeatSensor.h" />
+    <ClInclude Include="Sensor.h" />
     <ClInclude Include="SensorData.h" />
     <ClInclude Include="SensorHandler.h" />
   </ItemGroup>

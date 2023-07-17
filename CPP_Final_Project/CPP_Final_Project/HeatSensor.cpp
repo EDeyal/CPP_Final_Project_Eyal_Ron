@@ -5,6 +5,8 @@
 
 HeatSensor::HeatSensor(int minTemprature, int maxTemprature, int tempratureSway)
 {
+	SensorName = "HeatSensor";
+
 	_minTemprature = minTemprature;
 	_maxTemprature = maxTemprature;
 	_tempratureSway = tempratureSway;
