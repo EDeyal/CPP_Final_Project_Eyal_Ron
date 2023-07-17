@@ -1,6 +1,7 @@
 #include "time.h"
 #include "HeatSensor.h"
 #include <stdlib.h>
+#include "CalculationHelper.h"
 
 HeatSensor::HeatSensor(int minTemprature, int maxTemprature, int tempratureSway)
 {
@@ -13,7 +14,7 @@ HeatSensor::HeatSensor(int minTemprature, int maxTemprature, int tempratureSway)
 	}//Enter better numbers siirrrrr
 	srand(time(NULL));
 	_tempratureMaxDelta = abs(_minTemprature - _maxTemprature);
-	_lastTemprature = _minTemprature + (rand() % _tempratureMaxDelta + 1);//use calc helper
+	_lastTemprature = CalculationHelper::GetRandomNumber(_minTemprature, _maxTemprature) ;//use calc helper
 }
 
 float HeatSensor::GetSensorData()
@@ -27,7 +28,7 @@ float HeatSensor::GenerateSensorData()
 
 	//algorithem for sensor
 	// addition or reduction from last temprature
-	_currentTemprature = (_lastTemprature - _tempratureSway) + (rand() % (int)(_tempratureSway*2) + 1);//use calculation helper for random
+	_currentTemprature = _lastTemprature + CalculationHelper::GetRandomNumber(-_tempratureSway, _tempratureSway); //use calculation helper for random
 	// need to check if in range
 	// if no in range than will be at max or minimum
 	if (_currentTemprature < _minTemprature)

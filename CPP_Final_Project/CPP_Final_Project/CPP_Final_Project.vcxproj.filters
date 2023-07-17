@@ -21,9 +21,15 @@
     <ClCompile Include="HeatSensor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CalculationHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HeatSensor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CalculationHelper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
