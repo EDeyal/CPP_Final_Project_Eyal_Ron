@@ -1,5 +1,11 @@
 #include "DatabaseDownloader.h"
 
+DatabaseDownloader::DatabaseDownloader()
+{
+    _databaseData = new vector<SensorData>();
+    InitDatabase();
+}
+
 void DatabaseDownloader::InitDatabase()
 {
     SensorData temporaryData("HeatSensor", 1, 18);
@@ -10,12 +16,6 @@ void DatabaseDownloader::InitDatabase()
     _databaseData->push_back(temporaryData1);
     _databaseData->push_back(temporaryData2);
     _databaseData->push_back(temporaryData3);
-}
-
-DatabaseDownloader::DatabaseDownloader()
-{
-    _databaseData = new vector<SensorData>();
-    InitDatabase();
 }
 
 DatabaseDownloader::~DatabaseDownloader()

@@ -1,6 +1,8 @@
 #pragma once
 #include "SensorData.h"
 #include "vector"
+#include <mysqul.h>
+
 class DatabaseDownloader
 {
 private:
