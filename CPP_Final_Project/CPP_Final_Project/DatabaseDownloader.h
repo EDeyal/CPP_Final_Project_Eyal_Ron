@@ -8,7 +8,11 @@ class DatabaseDownloader
 private:
 	vector<SensorData>* _databaseData;
 	void InitDatabase();
-	MYSQL* conn;
+
+	// MySQL fields
+	MYSQL* _connection;
+	MYSQL_ROW _row;
+	MYSQL_RES* _result;
 
 public:
 	DatabaseDownloader();

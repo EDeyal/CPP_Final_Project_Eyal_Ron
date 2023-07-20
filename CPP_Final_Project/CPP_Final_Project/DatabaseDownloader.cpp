@@ -16,11 +16,17 @@ void DatabaseDownloader::InitDatabase()
     _databaseData->push_back(temporaryData1);
     _databaseData->push_back(temporaryData2);
     _databaseData->push_back(temporaryData3);
+
+    // ------------
+    _connection = mysql_init(0);
+    _connection = mysql_real_connect(_connection, "localhost", "root", "password", "testDB", 3306, NULL, 0);
+
 }
 
 DatabaseDownloader::~DatabaseDownloader()
 {
     delete _databaseData;
+    delete _connection;
 }
 
 vector<SensorData> DatabaseDownloader::RecieveAllData()
