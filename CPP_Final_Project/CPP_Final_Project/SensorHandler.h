@@ -7,7 +7,7 @@ class SensorHandler
 	HeatSensor* _heatSensor;
 
 public:
-	SensorHandler();
+	SensorHandler(int numberOfPreviousTests);
 	~SensorHandler();
 	SensorData GenerateFakeSensorData();
 };

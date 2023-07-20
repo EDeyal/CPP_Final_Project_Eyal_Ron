@@ -136,6 +136,7 @@
     <ClCompile Include="CalculationHelper.cpp" />
     <ClCompile Include="Dashboard.cpp" />
     <ClCompile Include="DatabaseDownloader.cpp" />
+    <ClCompile Include="DatabaseUploader.cpp" />
     <ClCompile Include="HeatSensor.cpp" />
     <ClCompile Include="Sensor.cpp" />
     <ClCompile Include="SensorData.cpp" />
@@ -146,6 +147,7 @@
     <ClInclude Include="CalculationHelper.h" />
     <ClInclude Include="Dashboard.h" />
     <ClInclude Include="DatabaseDownloader.h" />
+    <ClInclude Include="DatabaseUploader.h" />
     <ClInclude Include="HeatSensor.h" />
     <ClInclude Include="Sensor.h" />
     <ClInclude Include="SensorData.h" />

@@ -2,14 +2,15 @@
 
 using namespace std;
 
-SensorHandler::SensorHandler()
+SensorHandler::SensorHandler(int numberOfPreviousTests)
 {
+	_testNumber = numberOfPreviousTests;
+
 	int minTemperature = -20;
 	int maxTemperature = 50;
 	int maxTemperatureSway = 10;	// the amount of degrees the temperature can change between tests
 	_heatSensor = new HeatSensor(minTemperature, maxTemperature, maxTemperatureSway);
 
-	_testNumber = 0;
 }
 
 SensorHandler::~SensorHandler()
