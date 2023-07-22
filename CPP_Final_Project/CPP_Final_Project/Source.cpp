@@ -25,8 +25,16 @@ int main()
 	}
 
 	// Initialize DatabaseUploader/Downloader
-	string databaseName = "test18";
-	string tableName = "table1";
+
+	// -------- Optional Changes for User --------
+	
+	// If the user wants to create a new database - they should change the value of databaseName
+	string databaseName = "temperatures2023";
+	// When changing databaseName, you can also change tableName
+	string tableName = "temperatureTests";
+
+	// -------------------------------------------
+
 	DatabaseUploader* uploader = new DatabaseUploader(databaseName,tableName);
 	DatabaseDownloader* downloader = new DatabaseDownloader(databaseName, tableName);
 	
