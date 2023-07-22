@@ -21,17 +21,13 @@ DatabaseUploader::DatabaseUploader()
 		cout << "database not found - creating new database" << endl;
 
 		stringstream statement;
-		statement << "CREATE DATABASE [IF NOT EXISTS] temperaturesDatabase1";
-
+		statement << "CREATE DATABASE IF NOT EXISTS temperaturesDatabase1";
 		string statementString = statement.str();
 
-
-		const char* query = statementString.c_str();
-		//int query_state = mysql_query(NULL, query);
-
-		//ExecuteQuery(statementString);
-		//_connection = mysql_init(0);
-		//_connection = mysql_real_connect(_connection, "localhost", "root", "Password", "temperaturesDatabase1", 3306, NULL, 0);
+		_connection = mysql_init(0);
+		_connection = mysql_real_connect(_connection, "localhost", "root", "Password", NULL, 3306, NULL, 0);
+		ExecuteQuery(statementString);
+		_connection = mysql_real_connect(_connection, "localhost", "root", "Password", "temperaturesDatabase1", 3306, NULL, 0);
 	}
 
 	// If table doesn't exist - create one
