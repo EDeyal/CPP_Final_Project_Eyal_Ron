@@ -20,6 +20,7 @@ public:
 	DatabaseDownloader(string databaseName, string tableName);
 	~DatabaseDownloader();
 	int GetNumberOfPreviousTests();
+	int GetLastTemperatureMeasured();
 	vector<SensorData> RecieveAllData();
 };
 

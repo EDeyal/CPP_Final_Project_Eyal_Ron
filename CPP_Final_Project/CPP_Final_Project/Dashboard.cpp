@@ -1,14 +1,10 @@
 #include "Dashboard.h"
 
-Dashboard::Dashboard(int extremeSway, string databaseName, string tableName)
+Dashboard::Dashboard(int extremeSway, DatabaseDownloader* downloaderPTR)
 {
 	_extremeSway = extremeSway;
-	_databaseDownloader = new DatabaseDownloader(databaseName,tableName);
-}
-
-Dashboard::~Dashboard()
-{
-	delete _databaseDownloader;
+	_databaseDownloader = downloaderPTR;
+	//_databaseDownloader = new DatabaseDownloader("test17", "table1");
 }
 
 void Dashboard::DisplayAverageTemperature()
@@ -16,12 +12,13 @@ void Dashboard::DisplayAverageTemperature()
 	vector<SensorData> data = _databaseDownloader->RecieveAllData();
 
 	float totalTemperature = 0;
-	for (size_t i = 0; i < data.size(); i++)
+	int numberOfTestsPreformed = data.size();
+	for (size_t i = 0; i < numberOfTestsPreformed; i++)
 	{
 		totalTemperature += data[i].Temperature;
 	}
 
-	float averageTemperature = totalTemperature / data.size();
+	float averageTemperature = totalTemperature / numberOfTestsPreformed;
 	cout << "Average Temperature is: " << averageTemperature << endl;
 }
 
@@ -38,6 +35,7 @@ void Dashboard::DisplayNumberOfExtremeTemperatureChanges()
 			continue;
 		}
 
+		// if the temperature change is greater than extremeSway parameter, it is recorded.
 		if (abs(data[i].Temperature - data[i - 1].Temperature) >= _extremeSway)
 		{
 			numberOfExtremeChanges++;
@@ -50,7 +48,7 @@ void Dashboard::DisplayNumberOfExtremeTemperatureChanges()
 
 void Dashboard::DisplayAllData()
 {
-	////system("cls");
+
 	vector<SensorData> data = _databaseDownloader->RecieveAllData();
 
 	for (size_t i = 0; i < data.size(); i++)
@@ -60,9 +58,4 @@ void Dashboard::DisplayAllData()
 
 	DisplayAverageTemperature();
 	DisplayNumberOfExtremeTemperatureChanges();
-}
-
-int Dashboard::GetNumberOfPreviousTestsFromDatabase()
-{
-	return _databaseDownloader->GetNumberOfPreviousTests();
 }

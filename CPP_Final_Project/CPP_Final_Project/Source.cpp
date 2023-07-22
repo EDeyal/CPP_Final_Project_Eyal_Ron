@@ -6,7 +6,6 @@
 using namespace std;
 int main()
 {
-
 	int userExtremeSway = 0;
 	bool isUserExtremeSwayLegal = false;
 	
@@ -25,13 +24,20 @@ int main()
 		}
 	}
 
-	// Initialize Dashboard, SensorHandler and DatabaseUploader
-	string databaseName = "test17";
+	// Initialize DatabaseUploader/Downloader
+	string databaseName = "test18";
 	string tableName = "table1";
-	DatabaseUploader uploader(databaseName,tableName);
-	Dashboard dashboard(userExtremeSway,databaseName,tableName);
-	int numberOfPreviousTests = dashboard.GetNumberOfPreviousTestsFromDatabase();
-	SensorHandler sensorHandler(numberOfPreviousTests);
+	DatabaseUploader* uploader = new DatabaseUploader(databaseName,tableName);
+	DatabaseDownloader* downloader = new DatabaseDownloader(databaseName, tableName);
+	
+	// Initialize SensorHandler
+	int numberOfPreviousTests = downloader->GetNumberOfPreviousTests();
+	int lastTemperatureMeasured;
+	
+	SensorHandler sensorHandler(downloader);
+
+	// Initialize Dashboard
+	Dashboard dashboard(userExtremeSway, downloader);
 	
 	// Loop
 	bool isProgramRunning = true;
@@ -47,10 +53,12 @@ int main()
 		switch (input)
 		{
 			case 1:
-				uploader.UploadSensorData( sensorHandler.GenerateFakeSensorData() );
+				system("cls");
+				uploader->UploadSensorData( sensorHandler.GetSensorData() );
 				break;
 
 			case 2:
+				system("cls");
 				dashboard.DisplayAllData();
 				break;
 
@@ -65,7 +73,9 @@ int main()
 
 	}
 
-	
+	delete uploader;
+	delete downloader;
+
 
 	return 0;
 }

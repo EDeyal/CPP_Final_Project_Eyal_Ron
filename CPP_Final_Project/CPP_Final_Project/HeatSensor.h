@@ -7,17 +7,13 @@ class HeatSensor : public Sensor
 	int _currentTemprature;
 	int _minTemprature;
 	int _maxTemprature;
-	int _tempratureMaxDelta;
-	int _tempratureSway;//the maximum amount of change in temp per test
+	int _tempratureSway; //the maximum amount of change in temp per test
 
 
 
 public:
-	HeatSensor(int minTemprature, int maxTemprature,int _tempratureSway);
-	float GetSensorData();
-
-private:
-	float GenerateSensorData();
+	HeatSensor(int minTemprature, int maxTemprature,int tempratureSway, int lastTemperatureMeasured);
+	float GenerateFakeSensorData();
 
 };
 

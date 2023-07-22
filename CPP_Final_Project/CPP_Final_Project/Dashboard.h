@@ -12,13 +12,11 @@ private:
 
 	DatabaseDownloader* _databaseDownloader;
 	void DisplayAverageTemperature();
+	void DisplayNumberOfExtremeTemperatureChanges();
 
 public:
-	Dashboard(int extremeSway,string databaseName, string tableName);
-	~Dashboard();
-	void DisplayNumberOfExtremeTemperatureChanges();
+	Dashboard(int extremeSway, DatabaseDownloader* downloaderPTR);
 	void DisplayAllData();
-	int GetNumberOfPreviousTestsFromDatabase();
 
 };
 
