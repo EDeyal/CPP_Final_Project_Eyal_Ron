@@ -4,10 +4,12 @@
 
 using namespace std;
 
-DatabaseUploader::DatabaseUploader()
+DatabaseUploader::DatabaseUploader(string databaseName,string tableName)
 {
+	_databaseName = databaseName;
+	_tableName = tableName;
 	_connection = mysql_init(0);
-	_connection = mysql_real_connect(_connection, "localhost", "root", "Password", "temperaturesDatabase1", 3306, NULL, 0);
+	_connection = mysql_real_connect(_connection, "localhost", "root", "Password", _databaseName.c_str(), 3306, NULL, 0);
 
 	// If database doesn't exist - create one
 	if (_connection)
@@ -19,18 +21,29 @@ DatabaseUploader::DatabaseUploader()
 		// Database not found - creating a new database
 
 		cout << "database not found - creating new database" << endl;
-
-		stringstream statement;
-		statement << "CREATE DATABASE IF NOT EXISTS temperaturesDatabase1";
-		string statementString = statement.str();
+		
+		stringstream createDatabaseStatement;
+		createDatabaseStatement << "CREATE DATABASE IF NOT EXISTS " << _databaseName;
+		string statementString = createDatabaseStatement.str();
 
 		_connection = mysql_init(0);
 		_connection = mysql_real_connect(_connection, "localhost", "root", "Password", NULL, 3306, NULL, 0);
 		ExecuteQuery(statementString);
-		_connection = mysql_real_connect(_connection, "localhost", "root", "Password", "temperaturesDatabase1", 3306, NULL, 0);
-	}
 
-	// If table doesn't exist - create one
+		//use the database
+		stringstream useDatabaseStatement;
+		useDatabaseStatement << "USE " << _databaseName;
+
+		string statementString1 = useDatabaseStatement.str();
+		ExecuteQuery(statementString1);
+
+
+		//create new table
+		stringstream createTableStatement;
+		createTableStatement << "CREATE TABLE " << _tableName << " (SensorName varchar(32),TestNumber int,Temperature int)";
+		string statementString2 = createTableStatement.str();
+		ExecuteQuery(statementString2);
+	}
 
 }
 
@@ -46,7 +59,7 @@ void DatabaseUploader::UploadSensorData(SensorData data)
 		cout << "Successful connection to database on WRITE!" << endl;
 
 		stringstream insertStatement;
-		insertStatement << "INSERT INTO temperatureTests(sensorName, TestNumber, Temperature) Values('" + data.SensorName + "', '" + to_string(data.TestNumber) + "', '" + to_string(data.Temperature) + "')";
+		insertStatement << "INSERT INTO " <<_tableName<< "(SensorName, TestNumber, Temperature) Values('" + data.SensorName + "', '" + to_string(data.TestNumber) + "', '" + to_string(data.Temperature) + "')";
 
 		string insertString = insertStatement.str();
 

@@ -24,11 +24,12 @@ int main()
 			cout << "Invalid Input: please try again" << endl;
 		}
 	}
-	
 
 	// Initialize Dashboard, SensorHandler and DatabaseUploader
-	DatabaseUploader uploader;
-	Dashboard dashboard(userExtremeSway);
+	string databaseName = "test17";
+	string tableName = "table1";
+	DatabaseUploader uploader(databaseName,tableName);
+	Dashboard dashboard(userExtremeSway,databaseName,tableName);
 	int numberOfPreviousTests = dashboard.GetNumberOfPreviousTestsFromDatabase();
 	SensorHandler sensorHandler(numberOfPreviousTests);
 	

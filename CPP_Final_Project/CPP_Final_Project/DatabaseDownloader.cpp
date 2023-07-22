@@ -3,8 +3,10 @@
 
 using namespace std;
 
-DatabaseDownloader::DatabaseDownloader()
+DatabaseDownloader::DatabaseDownloader(string databaseName, string tableName)
 {
+    _databaseName = databaseName;
+    _tableName = tableName;
     _databaseData = new vector<SensorData>();
     InitDatabase();
 }
@@ -13,7 +15,7 @@ void DatabaseDownloader::InitDatabase()
 {
     // ------------
     _connection = mysql_init(0);
-    _connection = mysql_real_connect(_connection, "localhost", "root", "Password", "temperaturesDatabase", 3306, NULL, 0);
+    _connection = mysql_real_connect(_connection, "localhost", "root", "Password", _databaseName.c_str(), 3306, NULL, 0);
 
 }
 
@@ -32,7 +34,7 @@ int DatabaseDownloader::GetNumberOfPreviousTests()
 {
     if (_connection)
     {
-        string queryStatement = "SELECT * FROM temperatureTests";
+        string queryStatement = "SELECT * FROM " + _tableName;
         const char* query = queryStatement.c_str();
 
         // Sends a query to the database and establishes a link with it
@@ -70,7 +72,7 @@ vector<SensorData> DatabaseDownloader::RecieveAllData()
     {
         cout << "Successful connection to database on READ!" << endl;
 
-        string queryStatement = "SELECT * FROM temperatureTests";
+        string queryStatement = "SELECT * FROM " + _tableName;
         const char* query = queryStatement.c_str();
 
         // Sends a query to the database and establishes a link with it

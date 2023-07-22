@@ -1,9 +1,9 @@
 #include "Dashboard.h"
 
-Dashboard::Dashboard(int extremeSway)
+Dashboard::Dashboard(int extremeSway, string databaseName, string tableName)
 {
 	_extremeSway = extremeSway;
-	_databaseDownloader = new DatabaseDownloader();
+	_databaseDownloader = new DatabaseDownloader(databaseName,tableName);
 }
 
 Dashboard::~Dashboard()

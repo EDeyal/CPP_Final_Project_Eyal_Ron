@@ -14,7 +14,7 @@ private:
 	void DisplayAverageTemperature();
 
 public:
-	Dashboard(int extremeSway);
+	Dashboard(int extremeSway,string databaseName, string tableName);
 	~Dashboard();
 	void DisplayNumberOfExtremeTemperatureChanges();
 	void DisplayAllData();
