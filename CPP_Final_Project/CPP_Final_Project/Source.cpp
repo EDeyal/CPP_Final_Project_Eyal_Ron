@@ -27,10 +27,10 @@ int main()
 	
 
 	// Initialize Dashboard, SensorHandler and DatabaseUploader
+	DatabaseUploader uploader;
 	Dashboard dashboard(userExtremeSway);
 	int numberOfPreviousTests = dashboard.GetNumberOfPreviousTestsFromDatabase();
 	SensorHandler sensorHandler(numberOfPreviousTests);
-	DatabaseUploader uploader;
 	
 	// Loop
 	bool isProgramRunning = true;

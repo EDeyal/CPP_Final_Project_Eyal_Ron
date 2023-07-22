@@ -1,10 +1,7 @@
-﻿  Generating code
-  0 of 213 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
-﻿  SensorHandler.cpp
-E:\Files\School\Year 3\CPP Advanced\Final Project\CPP_Final_Project_Eyal_Ron\CPP_Final_Project\CPP_Final_Project\SensorHandler.cpp(25,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+﻿  DatabaseUploader.cpp
   Generating code
-  2 of 252 functions ( 0.8%) were compiled, the rest were copied from previous compilation.
+  2 of 260 functions ( 0.8%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    11 functions had inline decision re-evaluated but remain unchanged
+    0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
-  CPP_Final_Project.vcxproj -> E:\School\Year 3\CPP Advanced\Final Project\CPP_Final_Project_Eyal_Ron\CPP_Final_Project\x64\Release\CPP_Final_Project.exe
+  CPP_Final_Project.vcxproj -> C:\Users\edeya\Documents\GitHub\CPP_Final_Project_Eyal_Ron\CPP_Final_Project\x64\Release\CPP_Final_Project.exe

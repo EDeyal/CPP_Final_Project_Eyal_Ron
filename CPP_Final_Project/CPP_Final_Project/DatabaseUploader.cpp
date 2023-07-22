@@ -7,7 +7,7 @@ using namespace std;
 DatabaseUploader::DatabaseUploader()
 {
 	_connection = mysql_init(0);
-	_connection = mysql_real_connect(_connection, "localhost", "root", "Password", "temperaturesDatabase", 3306, NULL, 0);
+	_connection = mysql_real_connect(_connection, "localhost", "root", "Password", "temperaturesDatabase1", 3306, NULL, 0);
 
 	// If database doesn't exist - create one
 	if (_connection)
@@ -21,22 +21,27 @@ DatabaseUploader::DatabaseUploader()
 		cout << "database not found - creating new database" << endl;
 
 		stringstream statement;
-		statement << "CREATE DATABASE [IF NOT EXISTS] temperaturesDatabase";
+		statement << "CREATE DATABASE [IF NOT EXISTS] temperaturesDatabase1";
 
 		string statementString = statement.str();
 
 
-		ExecuteQuery(statementString);
+		const char* query = statementString.c_str();
+		//int query_state = mysql_query(NULL, query);
+
+		//ExecuteQuery(statementString);
+		//_connection = mysql_init(0);
+		//_connection = mysql_real_connect(_connection, "localhost", "root", "Password", "temperaturesDatabase1", 3306, NULL, 0);
 	}
 
 	// If table doesn't exist - create one
 
 }
 
-DatabaseUploader::~DatabaseUploader()
-{
+	DatabaseUploader::~DatabaseUploader()
+	{
 
-}
+	}
 
 void DatabaseUploader::UploadSensorData(SensorData data)
 {
