@@ -18,7 +18,7 @@ void Dashboard::DisplayAverageTemperature()
 	float totalTemperature = 0;
 	for (size_t i = 0; i < data.size(); i++)
 	{
-		totalTemperature += data[i]._temperature;
+		totalTemperature += data[i].Temperature;
 	}
 
 	float averageTemperature = totalTemperature / data.size();
@@ -38,7 +38,7 @@ void Dashboard::DisplayNumberOfExtremeTemperatureChanges()
 			continue;
 		}
 
-		if (abs(data[i]._temperature - data[i - 1]._temperature) >= _extremeSway)
+		if (abs(data[i].Temperature - data[i - 1].Temperature) >= _extremeSway)
 		{
 			numberOfExtremeChanges++;
 		}
@@ -50,7 +50,7 @@ void Dashboard::DisplayNumberOfExtremeTemperatureChanges()
 
 void Dashboard::DisplayAllData()
 {
-	//system("cls");
+	////system("cls");
 	vector<SensorData> data = _databaseDownloader->RecieveAllData();
 
 	for (size_t i = 0; i < data.size(); i++)
@@ -59,4 +59,10 @@ void Dashboard::DisplayAllData()
 	}
 
 	DisplayAverageTemperature();
+	DisplayNumberOfExtremeTemperatureChanges();
+}
+
+int Dashboard::GetNumberOfPreviousTestsFromDatabase()
+{
+	return _databaseDownloader->GetNumberOfPreviousTests();
 }

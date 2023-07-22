@@ -7,7 +7,6 @@ class DatabaseUploader
 	// MySQL fields
 	MYSQL* _connection;
 	void ExecuteQuery(string statement);
-
 public:
 	DatabaseUploader();
 	~DatabaseUploader();

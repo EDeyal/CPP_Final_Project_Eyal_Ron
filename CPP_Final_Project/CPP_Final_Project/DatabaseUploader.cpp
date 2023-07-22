@@ -30,6 +30,7 @@ DatabaseUploader::DatabaseUploader()
 	}
 
 	// If table doesn't exist - create one
+
 }
 
 DatabaseUploader::~DatabaseUploader()
@@ -47,11 +48,9 @@ void DatabaseUploader::UploadSensorData(SensorData data)
 		insertStatement << "INSERT INTO temperatureTests(sensorName, TestNumber, Temperature) Values('" + data.SensorName + "', '" + to_string(data.TestNumber) + "', '" + to_string(data.Temperature) + "')";
 
 		string insertString = insertStatement.str();
-		
+
 
 		ExecuteQuery(insertString);
-
-		
 	}
 	else
 	{

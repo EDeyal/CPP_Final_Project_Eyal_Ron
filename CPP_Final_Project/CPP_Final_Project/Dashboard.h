@@ -18,6 +18,7 @@ public:
 	~Dashboard();
 	void DisplayNumberOfExtremeTemperatureChanges();
 	void DisplayAllData();
+	int GetNumberOfPreviousTestsFromDatabase();
 
 };
 

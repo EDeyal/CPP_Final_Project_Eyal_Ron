@@ -17,6 +17,7 @@ private:
 public:
 	DatabaseDownloader();
 	~DatabaseDownloader();
+	int GetNumberOfPreviousTests();
 	vector<SensorData> RecieveAllData();
 };
 

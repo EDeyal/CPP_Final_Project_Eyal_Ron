@@ -6,9 +6,9 @@ using namespace std;
 class SensorData
 {
 public:
-	string _sensorName;
-	int _testNumber;
-	int _temperature;
+	string SensorName;
+	int TestNumber;
+	int Temperature;
 
 	SensorData(string sensorName, int testNumber, int temperature);
 
