@@ -12,6 +12,8 @@ using namespace std;
 * Or - On the MySQL website, go to:
 * Downloads » MySQL Community (GPL) Downloads » MySQL Installer for Windows » download first option (Windows (x86, 32-bit), MSI Installer)
 *
+* MySQL Server Version: 8.0.11 - x64
+* Connector/C++ Version: 1.1.11 - x64
 *
 * Link to explanation video about the project: https://drive.google.com/file/d/1VdTynPyO00-uEStp6USdlI_K8F51Av7v/view?usp=drive_link
 */
