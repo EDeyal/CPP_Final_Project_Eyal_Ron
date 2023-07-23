@@ -4,6 +4,15 @@
 #include "DatabaseUploader.h"
 
 using namespace std;
+
+// ---- IMPORTANT! ----
+/* 
+* For this program to work, you have to first install MySQL on your machine.
+* A Link to our video explaining exactly what and how to install: 
+* Or - On the MySQL website, go to:
+* Downloads » MySQL Community (GPL) Downloads » MySQL Installer for Windows » download first option (Windows (x86, 32-bit), MSI Installer)
+*/
+
 int main()
 {
 	int userExtremeSway = 0;
