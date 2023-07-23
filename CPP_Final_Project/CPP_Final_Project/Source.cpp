@@ -8,9 +8,12 @@ using namespace std;
 // ---- IMPORTANT! ----
 /* 
 * For this program to work, you have to first install MySQL on your machine.
-* A Link to our video explaining exactly what and how to install: 
+* A Link to our video explaining exactly what and how to install: https://drive.google.com/file/d/1IKPK3eTK4ZDNFgdrPSHpdQ4oiWAbCtf5/view?usp=sharing
 * Or - On the MySQL website, go to:
 * Downloads » MySQL Community (GPL) Downloads » MySQL Installer for Windows » download first option (Windows (x86, 32-bit), MSI Installer)
+*
+*
+* Link to explanation video about the project: https://drive.google.com/file/d/1VdTynPyO00-uEStp6USdlI_K8F51Av7v/view?usp=drive_link
 */
 
 int main()

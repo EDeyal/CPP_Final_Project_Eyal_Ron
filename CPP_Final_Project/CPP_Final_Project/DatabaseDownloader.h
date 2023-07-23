@@ -7,10 +7,9 @@ class DatabaseDownloader
 {
 private:
 	vector<SensorData>* _databaseData;
-	void InitDatabase();
-
 	string _databaseName;
 	string _tableName;
+
 	// MySQL fields
 	MYSQL* _connection;
 	MYSQL_ROW _row;
@@ -22,5 +21,8 @@ public:
 	int GetNumberOfPreviousTests();
 	int GetLastTemperatureMeasured();
 	vector<SensorData> RecieveAllData();
+
+private:
+	void InitDatabase();
 };
 

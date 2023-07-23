@@ -35,7 +35,7 @@ void Dashboard::DisplayNumberOfExtremeTemperatureChanges()
 			continue;
 		}
 
-		// if the temperature change is greater than extremeSway parameter, it is recorded.
+		// if the temperature change is equal or greater than extremeSway parameter, it is recorded.
 		if (abs(data[i].Temperature - data[i - 1].Temperature) >= _extremeSway)
 		{
 			numberOfExtremeChanges++;
@@ -43,6 +43,7 @@ void Dashboard::DisplayNumberOfExtremeTemperatureChanges()
 
 	}
 
+	cout << "The Extreme temperature change is defined as a change that's equal to/greater than " << _extremeSway << " degrees" << endl;
 	cout << "The number of extreme temperature changes is: " << numberOfExtremeChanges << endl;
 }
 
